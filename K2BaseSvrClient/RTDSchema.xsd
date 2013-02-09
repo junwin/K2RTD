@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema targetNamespace="http://tempuri.org/XMLSchema.xsd"
+    elementFormDefault="qualified"
+    xmlns="http://tempuri.org/XMLSchema.xsd"
+    xmlns:mstns="http://tempuri.org/XMLSchema.xsd"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+>
+  <xs:element name="KRTDConfig">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="IPEndpoint" minOccurs="1" maxOccurs="1" />
+      </xs:sequence>
+      <xs:attribute name="LogConfigPath" type="xs:string" />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IPEndpoint">
+    <xs:complexType>
+      <xs:sequence />
+      <xs:attribute name="Server" type="xs:string" use="optional" />
+      <xs:attribute name="Port" type="xs:unsignedInt" use="required" />
+      <xs:attribute name="Name" type="xs:string" use="required" />
+      <xs:attribute name="Path" type="xs:string" />
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

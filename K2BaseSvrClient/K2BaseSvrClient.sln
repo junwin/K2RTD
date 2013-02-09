@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "K2BaseSvrClient", "K2BaseSvrClient.csproj", "{5235A756-E6D6-4311-8342-2B5BD960FD94}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		REL32|Any CPU = REL32|Any CPU
+		Rel64|Any CPU = Rel64|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5235A756-E6D6-4311-8342-2B5BD960FD94}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5235A756-E6D6-4311-8342-2B5BD960FD94}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5235A756-E6D6-4311-8342-2B5BD960FD94}.REL32|Any CPU.ActiveCfg = REL32|Any CPU
+		{5235A756-E6D6-4311-8342-2B5BD960FD94}.REL32|Any CPU.Build.0 = REL32|Any CPU
+		{5235A756-E6D6-4311-8342-2B5BD960FD94}.Rel64|Any CPU.ActiveCfg = Rel64|Any CPU
+		{5235A756-E6D6-4311-8342-2B5BD960FD94}.Rel64|Any CPU.Build.0 = Rel64|Any CPU
+		{5235A756-E6D6-4311-8342-2B5BD960FD94}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5235A756-E6D6-4311-8342-2B5BD960FD94}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

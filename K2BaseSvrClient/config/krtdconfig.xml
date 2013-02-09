@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--Created by Liquid XML Data Binding Libraries (www.liquid-technologies.com) for John Unwin-->
+<kaitns:KRTDConfig xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" xmlns:kaitns="http://www.kaitrade.com/KA" LogConfigPath="C:\Program Files\KaiTrade\K2Accelerator\config\RTDLogger.xml">
+	<kaitns:IPEndpoint Server="" Port="11001" Name=""/>
+</kaitns:KRTDConfig>

@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/KTARemote" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/KTARemote" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="KTAMessage">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="m_AppSpecific" type="xs:long" />
+      <xs:element minOccurs="0" name="m_AppState" type="xs:int" />
+      <xs:element minOccurs="0" name="m_AppType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="m_ClientID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="m_ClientSubID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="m_CorrelationID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="m_CreationTime" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="m_Data" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="m_Format" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="m_Label" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="m_Tag" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="m_TargetID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="m_TargetSubID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="m_UserID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="m_VenueCode" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="KTAMessage" nillable="true" type="tns:KTAMessage" />
+</xs:schema>

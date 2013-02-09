@@ -1,0 +1,281 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="K2RTDSupport" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="NetTcpBinding_IK2RTDSupport_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <msb:BinaryEncoding xmlns:msb="http://schemas.microsoft.com/ws/06/2004/mspolicy/netbinary1" />
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <msf:WindowsTransportSecurity xmlns:msf="http://schemas.microsoft.com/ws/2006/05/framing/policy">
+                  <msf:ProtectionLevel>EncryptAndSign</msf:ProtectionLevel>
+                </msf:WindowsTransportSecurity>
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256 />
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict />
+              </wsp:Policy>
+            </sp:Layout>
+          </wsp:Policy>
+        </sp:TransportBinding>
+        <wsaw:UsingAddressing />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import namespace="http://tempuri.org/" />
+      <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/KTARemote" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IK2RTDSupport_GetAccessID_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAccessID" />
+  </wsdl:message>
+  <wsdl:message name="IK2RTDSupport_GetAccessID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAccessIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IK2RTDSupport_Register_InputMessage">
+    <wsdl:part name="parameters" element="tns:Register" />
+  </wsdl:message>
+  <wsdl:message name="IK2RTDSupport_Register_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RegisterResponse" />
+  </wsdl:message>
+  <wsdl:message name="IK2RTDSupport_ConnectData_InputMessage">
+    <wsdl:part name="parameters" element="tns:ConnectData" />
+  </wsdl:message>
+  <wsdl:message name="IK2RTDSupport_Log_InputMessage">
+    <wsdl:part name="parameters" element="tns:Log" />
+  </wsdl:message>
+  <wsdl:message name="IK2RTDSupport_SubscribeData_InputMessage">
+    <wsdl:part name="parameters" element="tns:SubscribeData" />
+  </wsdl:message>
+  <wsdl:message name="IK2RTDSupport_SubscribeData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SubscribeDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="IK2RTDSupport_SubmitOrder_InputMessage">
+    <wsdl:part name="parameters" element="tns:SubmitOrder" />
+  </wsdl:message>
+  <wsdl:message name="IK2RTDSupport_SubmitOrder_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SubmitOrderResponse" />
+  </wsdl:message>
+  <wsdl:message name="IK2RTDSupport_PublishTrigger_InputMessage">
+    <wsdl:part name="parameters" element="tns:PublishTrigger" />
+  </wsdl:message>
+  <wsdl:message name="IK2RTDSupport_PublishTrigger_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PublishTriggerResponse" />
+  </wsdl:message>
+  <wsdl:message name="IK2RTDSupport_GPPublishRequest_InputMessage">
+    <wsdl:part name="parameters" element="tns:GPPublishRequest" />
+  </wsdl:message>
+  <wsdl:message name="IK2RTDSupport_GPPublishRequest_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GPPublishRequestResponse" />
+  </wsdl:message>
+  <wsdl:message name="IK2RTDSupport_HeartBeat_InputMessage">
+    <wsdl:part name="parameters" element="tns:HeartBeat" />
+  </wsdl:message>
+  <wsdl:message name="IK2RTDSupport_HeartBeat_OutputMessage">
+    <wsdl:part name="parameters" element="tns:HeartBeatResponse" />
+  </wsdl:message>
+  <wsdl:message name="IK2RTDSupport_UnSubscribeData_InputMessage">
+    <wsdl:part name="parameters" element="tns:UnSubscribeData" />
+  </wsdl:message>
+  <wsdl:message name="IK2RTDSupport_Init_InputMessage">
+    <wsdl:part name="parameters" element="tns:Init" />
+  </wsdl:message>
+  <wsdl:message name="IK2RTDSupport_Init_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InitResponse" />
+  </wsdl:message>
+  <wsdl:message name="IK2RTDSupport_Finalize_InputMessage">
+    <wsdl:part name="parameters" element="tns:Finalize" />
+  </wsdl:message>
+  <wsdl:message name="IK2RTDSupport_OnMessage_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:OnMessage" />
+  </wsdl:message>
+  <wsdl:message name="IK2RTDSupport_OnTopicUpdate_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:OnTopicUpdate" />
+  </wsdl:message>
+  <wsdl:portType name="IK2RTDSupport">
+    <wsdl:operation name="GetAccessID">
+      <wsdl:input wsaw:Action="http://tempuri.org/IK2RTDSupport/GetAccessID" message="tns:IK2RTDSupport_GetAccessID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IK2RTDSupport/GetAccessIDResponse" message="tns:IK2RTDSupport_GetAccessID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Register">
+      <wsdl:input wsaw:Action="http://tempuri.org/IK2RTDSupport/Register" message="tns:IK2RTDSupport_Register_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IK2RTDSupport/RegisterResponse" message="tns:IK2RTDSupport_Register_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ConnectData">
+      <wsdl:input wsaw:Action="http://tempuri.org/IK2RTDSupport/ConnectData" message="tns:IK2RTDSupport_ConnectData_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Log">
+      <wsdl:input wsaw:Action="http://tempuri.org/IK2RTDSupport/Log" message="tns:IK2RTDSupport_Log_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SubscribeData">
+      <wsdl:input wsaw:Action="http://tempuri.org/IK2RTDSupport/SubscribeData" message="tns:IK2RTDSupport_SubscribeData_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IK2RTDSupport/SubscribeDataResponse" message="tns:IK2RTDSupport_SubscribeData_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SubmitOrder">
+      <wsdl:input wsaw:Action="http://tempuri.org/IK2RTDSupport/SubmitOrder" message="tns:IK2RTDSupport_SubmitOrder_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IK2RTDSupport/SubmitOrderResponse" message="tns:IK2RTDSupport_SubmitOrder_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PublishTrigger">
+      <wsdl:input wsaw:Action="http://tempuri.org/IK2RTDSupport/PublishTrigger" message="tns:IK2RTDSupport_PublishTrigger_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IK2RTDSupport/PublishTriggerResponse" message="tns:IK2RTDSupport_PublishTrigger_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GPPublishRequest">
+      <wsdl:input wsaw:Action="http://tempuri.org/IK2RTDSupport/GPPublishRequest" message="tns:IK2RTDSupport_GPPublishRequest_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IK2RTDSupport/GPPublishRequestResponse" message="tns:IK2RTDSupport_GPPublishRequest_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="HeartBeat">
+      <wsdl:input wsaw:Action="http://tempuri.org/IK2RTDSupport/HeartBeat" message="tns:IK2RTDSupport_HeartBeat_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IK2RTDSupport/HeartBeatResponse" message="tns:IK2RTDSupport_HeartBeat_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UnSubscribeData">
+      <wsdl:input wsaw:Action="http://tempuri.org/IK2RTDSupport/UnSubscribeData" message="tns:IK2RTDSupport_UnSubscribeData_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Init">
+      <wsdl:input wsaw:Action="http://tempuri.org/IK2RTDSupport/Init" message="tns:IK2RTDSupport_Init_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IK2RTDSupport/InitResponse" message="tns:IK2RTDSupport_Init_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Finalize">
+      <wsdl:input wsaw:Action="http://tempuri.org/IK2RTDSupport/Finalize" message="tns:IK2RTDSupport_Finalize_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="OnMessage">
+      <wsdl:output wsaw:Action="http://tempuri.org/IK2RTDSupport/OnMessage" message="tns:IK2RTDSupport_OnMessage_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="OnTopicUpdate">
+      <wsdl:output wsaw:Action="http://tempuri.org/IK2RTDSupport/OnTopicUpdate" message="tns:IK2RTDSupport_OnTopicUpdate_OutputCallbackMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="NetTcpBinding_IK2RTDSupport" type="tns:IK2RTDSupport">
+    <wsp:PolicyReference URI="#NetTcpBinding_IK2RTDSupport_policy" />
+    <soap12:binding transport="http://schemas.microsoft.com/soap/tcp" />
+    <wsdl:operation name="GetAccessID">
+      <soap12:operation soapAction="http://tempuri.org/IK2RTDSupport/GetAccessID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Register">
+      <soap12:operation soapAction="http://tempuri.org/IK2RTDSupport/Register" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConnectData">
+      <soap12:operation soapAction="http://tempuri.org/IK2RTDSupport/ConnectData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="Log">
+      <soap12:operation soapAction="http://tempuri.org/IK2RTDSupport/Log" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="SubscribeData">
+      <soap12:operation soapAction="http://tempuri.org/IK2RTDSupport/SubscribeData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SubmitOrder">
+      <soap12:operation soapAction="http://tempuri.org/IK2RTDSupport/SubmitOrder" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PublishTrigger">
+      <soap12:operation soapAction="http://tempuri.org/IK2RTDSupport/PublishTrigger" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GPPublishRequest">
+      <soap12:operation soapAction="http://tempuri.org/IK2RTDSupport/GPPublishRequest" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HeartBeat">
+      <soap12:operation soapAction="http://tempuri.org/IK2RTDSupport/HeartBeat" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UnSubscribeData">
+      <soap12:operation soapAction="http://tempuri.org/IK2RTDSupport/UnSubscribeData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="Init">
+      <soap12:operation soapAction="http://tempuri.org/IK2RTDSupport/Init" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Finalize">
+      <soap12:operation soapAction="http://tempuri.org/IK2RTDSupport/Finalize" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="OnMessage">
+      <soap12:operation soapAction="http://tempuri.org/IK2RTDSupport/OnMessage" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OnTopicUpdate">
+      <soap12:operation soapAction="http://tempuri.org/IK2RTDSupport/OnTopicUpdate" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="K2RTDSupport">
+    <wsdl:port name="NetTcpBinding_IK2RTDSupport" binding="tns:NetTcpBinding_IK2RTDSupport">
+      <soap12:address location="net.tcp://localhost:11000/" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>net.tcp://localhost:11000/</wsa10:Address>
+        <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
+          <Upn>juwin7\junwin</Upn>
+        </Identity>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
