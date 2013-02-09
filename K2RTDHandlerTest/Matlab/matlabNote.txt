@@ -1,0 +1,74 @@
+
+% How to load the KaiTrade K2RTDServerKit assembly
+% Ensure that the path points to where you installed the kit
+try
+  NET.addAssembly('C:\Users\Owner\Desktop\K2RTD\build\bin\K2RTDServerKit.dll')
+catch e
+  e.message
+  if(isa(e,'NET.NetException'))
+    e.ExceptionObject
+  end
+end
+
+
+
+% Create an instance of the K2RTDServerKit Factory - use this
+% to get instances of your server
+classObj = K2RTDServerKit.Factory.Instance()
+
+% Get the RTDServer object - you will use this for most operations
+cloRTDSvr = classObj.GetRTDServer('')
+
+% Start things running - do this just once
+cloRTDSvr.StartHandler('')
+
+
+% Add a listener to receive events from RTD
+% Place the function at the end of this file as a file called eventRequestHandler.m
+% In your matlab directory
+addlistener(cloRTDSvr,'RTDRequestEvent',@eventRequestHandler);
+
+
+
+%Publish a single data point to Excel
+cloRTDSvr.Publish('HPQ', 'ASKPX', '12345')
+
+
+% Publish an Array of data to Excel
+rng('default')
+excelData = rand(1,5)
+cloRTDSvr.Publish('ITEST', excelData)
+
+
+% Get a list of subjects currently registered in the server
+subjectList = cloRTDSvr.GetSubjects()
+disp(subjectList.Item(1))
+
+ 
+
+
+% Save this as an .m file
+% This file is provided in the sample 
+% copy it to your MATLAB directory
+function eventRequestHandler(source,arg)
+disp(arg.rtdTopicID)    
+topicID = arg.parameters(2);      
+reqType = arg.parameters(3);      
+subject = arg.parameters(4);     
+headerName = arg.parameters(5);  
+disp(topicID)
+disp(reqType)
+disp(subject)
+disp(headerName)
+reqType =char(reqType);
+disp(reqType)
+if strcmp(reqType,'PX')
+    % This will register this in the Servers publisher list
+    source.Subscribe(subject, headerName, arg.rtdTopicID, arg.accessID);
+elseif strcmp(reqType,'WPUB')
+    % WPUB is used to publish data into Matlab
+    % note you can have an arbitary length of data values
+    dataValue = arg.parameters(6);
+    disp(dataValue)
+end
+end

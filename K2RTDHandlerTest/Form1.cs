@@ -84,11 +84,10 @@ namespace K2RTDHandlerTest
 
 
         /// <summary>
-        /// Handle a request from Excel
+        /// Called when a new request from some instance of excel is made
         /// </summary>
-        /// <param name="accessID">ID of incoming rtd instance - used by the comm channel</param>
-        /// <param name="rtdTopicID">Excel topic ID</param>
-        /// <param name="parameters">Array of parameters from the RTD call</param>
+        /// <param name="sender"></param>
+        /// <param name="e">Arguments to the call</param>
         public void OnRequest(object sender, K2RTDServerKit.RequestEventArgs e) 
         {
 
@@ -101,6 +100,10 @@ namespace K2RTDHandlerTest
             string reqType = e.parameters[2];     // Request Type
             string subject = e.parameters[3];     // Subject
             string headerName = e.parameters[4];  // Header Name
+
+            // The accessID identifies the source of the message so must be used
+            // when you want to support N connections to the server
+            string accessID = e.accessID;
 
             // the use of other parameters may vary depending on your
             // application, if specified in this case parameter 5 is the value
