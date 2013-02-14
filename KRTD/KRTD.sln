@@ -8,21 +8,6 @@ EndProject
 Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "K2RTD", "K2RTD\K2RTD.vdproj", "{59AE8152-EE05-457C-9B7E-E0541989C74D}"
 EndProject
 Global
-	GlobalSection(TeamFoundationVersionControl) = preSolution
-		SccNumberOfProjects = 4
-		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
-		SccTeamFoundationServer = https://shared02.tfsmadeeasy.com:8443/
-		SccLocalPath0 = .
-		SccProjectUniqueName1 = KRTD\\KRTD.csproj
-		SccProjectName1 = KRTD
-		SccLocalPath1 = KRTD
-		SccProjectUniqueName2 = ..\\K2BaseSvrClient\\K2BaseSvrClient.csproj
-		SccProjectName2 = ../K2BaseSvrClient
-		SccLocalPath2 = ..\\K2BaseSvrClient
-		SccProjectUniqueName3 = K2RTD\\K2RTD.vdproj
-		SccProjectName3 = K2RTD
-		SccLocalPath3 = K2RTD
-	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		CD_ROM|Any CPU = CD_ROM|Any CPU
 		Custom|Any CPU = Custom|Any CPU
